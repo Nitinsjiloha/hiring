@@ -1,0 +1,16 @@
+DEBUG:asyncio:Using selector: EpollSelector
+INFO 2020-08-04 19:19:59,167 autoreload.py Watching for file changes with StatReloader
+WARNING 2020-08-04 19:23:04,091 log.py Not Found: /
+WARNING:django.request:Not Found: /
+WARNING 2020-08-04 19:23:04,092 basehttp.py "GET / HTTP/1.1" 404 2597
+WARNING:django.server:"GET / HTTP/1.1" 404 2597
+INFO 2020-08-04 19:23:09,050 basehttp.py "GET /signin HTTP/1.1" 200 849
+INFO:django.server:"GET /signin HTTP/1.1" 200 849
+INFO 2020-08-04 19:23:09,075 basehttp.py "GET /static/style.css HTTP/1.1" 200 1491
+INFO:django.server:"GET /static/style.css HTTP/1.1" 200 1491
+INFO 2020-08-04 19:23:12,113 basehttp.py "POST /signin HTTP/1.1" 200 1344
+INFO:django.server:"POST /signin HTTP/1.1" 200 1344
+INFO 2020-08-04 19:23:17,453 basehttp.py "GET /signout HTTP/1.1" 302 0
+INFO:django.server:"GET /signout HTTP/1.1" 302 0
+INFO 2020-08-04 19:23:17,459 basehttp.py "GET /signin HTTP/1.1" 200 849
+INFO:django.server:"GET /signin HTTP/1.1" 200 849
