@@ -1,58 +1,41 @@
 {%extends 'base.html' %} {%block content%}
-{%load static%}
+{% load static %}
+<!--<style>-->
+<!--    body {-->
+<!--  background: #52b8a0; /* fallback for old browsers */-->
+<!--  background: -webkit-linear-gradient(right, #52b8a0, #8DC26F);-->
+<!--  background: -moz-linear-gradient(right, #52b8a0, #8DC26F);-->
+<!--  background: -o-linear-gradient(right, #52b8a0, #8DC26F);-->
+<!--  background: linear-gradient(to left, #52b8a0, #8DC26F);-->
+<!--  font-family: "Roboto", sans-serif;-->
+<!--  -webkit-font-smoothing: antialiased;-->
+<!--  -moz-osx-font-smoothing: grayscale;-->
+<!--}-->
+<!--</style>-->
 
-<div class="row">
-  <div class="col-md-4">
-      <h1 style="font-style: normal;" class="text-light"><a href="{% url 'signout' %}"><span>signout</span></a></h1>
-    <form id="test">
-    <select id="dates-field2" class="multiselect-ui form-control user_id" multiple="multiple">
-        {% for user in results %}
-        {% csrf_token %}
-        <option value="{{ result }}">{{user.id}}</option>
-            {% endfor %}
-        </select>
+<button style="margin-left:1500px;" type="submit"><a href="{% url 'signout' %}"><span>signout</span></a></button>
+<!--<h1 style="text-align:center;">Profile Page </h1>-->
+<div class="login-page">
+        <h1 style="text-align:center; ">Profile Page</h1>
 
-         <button class="btn-save btn btn-primary btn-sm">Save</button>
-    </form>
-  </div>
-</div>
+        <div class="form">
+            <form action= "delete" method="POST" class="post-form" enctype="multipart/form-data">
 
-<!--<script type="text/javascript">-->
-<!--    $(function () {-->
-<!--        $('.multiselect-ui').multiselect({-->
-<!--            includeSelectAllOption: true,-->
-<!--            enableFiltering: true,-->
-<!--            enableCaseInsensitiveFiltering: true,-->
-<!--            filterPlaceholder: 'Search for something...'-->
-<!--        });-->
-<!--    });-->
+                {% csrf_token %}
+                <h3 style="color:black;">Delete User</h3>
+                <select class="post-form"  name="userID" >
+                          {% for user in results %}
+                          <option value="{{ user.id }}">{{user.id}}</option>
+                          {% endfor%}
+                </select>
+                <p></p>
+                <button type="submit" formaction="delete" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delete </button>
 
-<!--    $('form#test').submit(function (e) {-->
-<!--        console.log("Triggered value");-->
-
-<!--        filtered_values = get_latest_select();-->
-<!--             };-->
-
-
-<!--    function get_latest_select() {-->
-<!--        var filtered_values = {"user_id": []};-->
-<!--        $.each($(".user_id option:selected"), function () {-->
-<!--            filtered_values['user_id'].push($(this).val());-->
-<!--        });-->
-
-<!--        return filtered_values-->
-
-<!--    }-->
-
-<!--    $(".filter_values").click(function () {-->
-<!--        filtered_values = get_latest_select();-->
-<!--        post_server(filtered_values, '/userlist');-->
-
-<!--    });-->
+            </form>
+            </div>
+        </div>
 
 
 
-
-<!--</script>-->
 
 {% endblock%}
