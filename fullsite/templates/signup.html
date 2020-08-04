@@ -1,0 +1,21 @@
+{%extends 'base.html' %} {%block content%}
+{%load static%}
+
+<title>Signup page</title>
+<div class="login-page">
+
+  <div class="form">
+    <h2>Invalid User Signup Here..!!</h2>
+    <form method="POST" action="signup" class="post-form">
+      {% csrf_token %}
+      <input type="text" placeholder="name" name="username"/>
+      <input type="password" placeholder="Password Ex: rohit1234" name="password1"/>
+      <input type="password" placeholder="Password Ex: rohit1234" name="password2"/>
+      <button type="submit">Create User</button>
+      <h3 style="color:black;" class="message">Already registered? <a  style="color:blue;" href="signin">Sign In</a></h3>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

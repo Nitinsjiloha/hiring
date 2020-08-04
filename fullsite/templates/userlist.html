@@ -1,0 +1,58 @@
+{%extends 'base.html' %} {%block content%}
+{%load static%}
+
+<div class="row">
+  <div class="col-md-4">
+      <h1 style="font-style: normal;" class="text-light"><a href="{% url 'signout' %}"><span>signout</span></a></h1>
+    <form id="test">
+    <select id="dates-field2" class="multiselect-ui form-control user_id" multiple="multiple">
+        {% for user in results %}
+        {% csrf_token %}
+        <option value="{{ result }}">{{user.id}}</option>
+            {% endfor %}
+        </select>
+
+         <button class="btn-save btn btn-primary btn-sm">Save</button>
+    </form>
+  </div>
+</div>
+
+<!--<script type="text/javascript">-->
+<!--    $(function () {-->
+<!--        $('.multiselect-ui').multiselect({-->
+<!--            includeSelectAllOption: true,-->
+<!--            enableFiltering: true,-->
+<!--            enableCaseInsensitiveFiltering: true,-->
+<!--            filterPlaceholder: 'Search for something...'-->
+<!--        });-->
+<!--    });-->
+
+<!--    $('form#test').submit(function (e) {-->
+<!--        console.log("Triggered value");-->
+
+<!--        filtered_values = get_latest_select();-->
+<!--             };-->
+
+
+<!--    function get_latest_select() {-->
+<!--        var filtered_values = {"user_id": []};-->
+<!--        $.each($(".user_id option:selected"), function () {-->
+<!--            filtered_values['user_id'].push($(this).val());-->
+<!--        });-->
+
+<!--        return filtered_values-->
+
+<!--    }-->
+
+<!--    $(".filter_values").click(function () {-->
+<!--        filtered_values = get_latest_select();-->
+<!--        post_server(filtered_values, '/userlist');-->
+
+<!--    });-->
+
+
+
+
+<!--</script>-->
+
+{% endblock%}

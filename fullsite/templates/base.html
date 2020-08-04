@@ -1,0 +1,20 @@
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{%static 'style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{%block content%} {%endblock%}
+
+</body>
+
+
+<script>
+  $('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
+</script>
+</html>
