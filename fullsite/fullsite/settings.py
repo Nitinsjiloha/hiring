@@ -114,6 +114,38 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGGING = {
+    'version': 1,
+    # Version of logging
+    'disable_existing_loggers': False,
+    #disable logging
+    # Handlers #############################################################
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'loginfo.log',
+            'formatter':'simpleRe',
+        },
+########################################################################
+    },
+    'formatters':{
+            'simpleRe':{
+                'format':'{levelname} {asctime} {filename} {message}',
+                'style':'{',
+            }
+        },
+    # Loggers ####################################################################
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

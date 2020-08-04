@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import logout
 from .models import users
+
 LOG_FILENAME = 'loginfo.log'
 logging.basicConfig(filename=LOG_FILENAME, level=logging.DEBUG)
 
@@ -32,8 +33,6 @@ def signup(request):
 
 @csrf_exempt
 def signin(request):
-    # if request.user.is_authenticated:
-    #     return render(request, 'userlist.html')
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
